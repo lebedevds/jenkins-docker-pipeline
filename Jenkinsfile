@@ -13,6 +13,7 @@ pipeline {
     }
     stage ('Build docker image') {
       steps {
+      sh 'ls -la'
 
       }
     }
