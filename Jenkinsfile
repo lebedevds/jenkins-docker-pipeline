@@ -1,10 +1,8 @@
 pipeline {
   agent {
-     dockerfile {
-        filename 'Dockerfile.build'
-        lebel 'build'
-       // args '-v'
-     }
+     docker {
+       image 'lebedevds/build-war'
+       }
   }
   stages {
     stage ('Build war file') {
