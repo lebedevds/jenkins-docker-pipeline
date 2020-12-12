@@ -2,6 +2,7 @@ pipeline {
   agent {
      docker {
        image 'lebedevds/build-war'
+       args '-v /var/run/docker.sock:/var/run/docker.sock --privileged'
        }
   }
   stages {
@@ -13,10 +14,9 @@ pipeline {
     }
     stage ('Build docker image') {
       steps {
-      sh 'ls -la'
+      sh 'docker build https://github.com/lebedevds/jenkins-docker-pipeline.git -f Dockerfile.deploy'
 
       }
     }
   }
 }
-  
