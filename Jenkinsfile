@@ -2,7 +2,7 @@ pipeline {
   agent {
      docker {
        image 'lebedevds/build-war'
-       args '-v /var/run/docker.sock:/var/run/docker.sock --privileged'
+       args '-v /var/run/docker.sock:/var/run/docker.sock'
        }
   }
   stages {
