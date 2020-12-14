@@ -23,7 +23,7 @@ pipeline {
       steps {
         sh 'ssh-keyscan -H jenkins >> ~/.ssh/known_hosts'
         sh 'ssh@$prod_ip docker pull $NAME'
-        sh 'ssh@@$prod_ip docker run -d -p 8080:8080 -i $NAME'
+        sh 'ssh@$prod_ip docker run -d -p 8080:8080 $NAME'
       }
     }
   }
